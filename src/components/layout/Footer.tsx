@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Instagram, Mail } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 
@@ -8,7 +9,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <p className="text-xl font-display font-bold mb-3">Navigotoo</p>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.png"
+                alt="Navigotoo"
+                width={140}
+                height={56}
+                className="h-12 w-auto brightness-0 invert"
+              />
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               {siteConfig.description}
             </p>

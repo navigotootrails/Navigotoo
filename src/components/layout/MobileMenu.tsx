@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 
@@ -21,7 +22,15 @@ export default function MobileMenu() {
       {open && (
         <div className="fixed inset-0 z-50 bg-white flex flex-col">
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-            <span className="text-xl font-display font-bold text-brand-slate">Navigotoo</span>
+            <Link href="/" onClick={() => setOpen(false)}>
+              <Image
+                src="/logo.png"
+                alt="Navigotoo"
+                width={120}
+                height={48}
+                className="h-9 w-auto"
+              />
+            </Link>
             <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2">
               <X size={24} className="text-brand-slate" />
             </button>
